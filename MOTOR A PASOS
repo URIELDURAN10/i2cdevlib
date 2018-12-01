@@ -1,0 +1,65 @@
+ //Definimos los pines a usar
+  #define BobinaUA 2
+  #define BobinaUB 3
+  #define BobinaDC 4
+  #define BobinaDD 5
+  void setup() {
+  //Inicalizamos los pines
+  pinMode(BobinaUA, OUTPUT);
+  pinMode(BobinaUB, OUTPUT);
+  pinMode(BobinaDC, OUTPUT);
+  pinMode(BobinaDD, OUTPUT);
+  }
+  void loop() {
+  for(int i = 0; i < 51; i++){
+  giroHorario(5);
+  }
+  delay(1000);
+  for(int i = 0; i < 51; i++){
+  giroAntiHorario(5);
+  }}
+  //Metodos para que gire el motor
+  void giroHorario(int tiempo){
+  digitalWrite(BobinaUA, HIGH);
+  digitalWrite(BobinaUB, LOW);
+  digitalWrite(BobinaDC, HIGH);
+  digitalWrite(BobinaDD, LOW);
+  delay(tiempo);
+  digitalWrite(BobinaUA, LOW);
+  digitalWrite(BobinaUB, HIGH);
+  digitalWrite(BobinaDC, HIGH);
+  digitalWrite(BobinaDD, LOW);
+  delay(tiempo);
+  digitalWrite(BobinaUA, LOW);
+  digitalWrite(BobinaUB, HIGH);
+  digitalWrite(BobinaDC, LOW);
+  digitalWrite(BobinaDD, HIGH);
+  delay(tiempo);
+  digitalWrite(BobinaUA, HIGH);
+  digitalWrite(BobinaUB, LOW);
+  digitalWrite(BobinaDC, LOW);
+  digitalWrite(BobinaDD, HIGH);
+  delay(tiempo);
+  }
+  void giroAntiHorario(int tiempo){
+  digitalWrite(BobinaUA, HIGH);
+  digitalWrite(BobinaUB, LOW);
+  digitalWrite(BobinaDC, LOW);
+  digitalWrite(BobinaDD, HIGH);
+  delay(tiempo);
+  digitalWrite(BobinaUA, LOW);
+  digitalWrite(BobinaUB, HIGH);
+  digitalWrite(BobinaDC, LOW);
+  digitalWrite(BobinaDD, HIGH);
+  delay(tiempo);
+  digitalWrite(BobinaUA, LOW);
+  digitalWrite(BobinaUB, HIGH);
+  digitalWrite(BobinaDC, HIGH);
+  digitalWrite(BobinaDD, LOW);
+  delay(tiempo);
+  digitalWrite(BobinaUA, HIGH);
+  digitalWrite(BobinaUB, LOW);
+  digitalWrite(BobinaDC, HIGH);
+  digitalWrite(BobinaDD, LOW);
+  delay(tiempo);
+  }
